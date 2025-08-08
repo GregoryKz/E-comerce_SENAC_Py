@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container mt-4">
+  <h2>Cadastrar Produto</h2>
+  <form method="POST">
+    <div class="mb-3">
+      <label>Nome</label>
+      <input type="text" name="nome" class="form-control">
+    </div>
+    <div class="mb-3">
+      <label>Valor</label>
+      <input type="text" name="valor" class="form-control">
+    </div>
+    <div class="mb-3">
+      <label>Marca</label>
+      <input type="text" name="marca" class="form-control">
+    </div>
+    <button type="submit" class="btn btn-primary">Cadastrar</button>
+  </form>
+</div>
+{% endblock %}

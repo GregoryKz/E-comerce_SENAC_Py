@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container mt-4">
+  <h2>Carrinho de Compras</h2>
+  {% if produtos %}
+  <table class="table">
+    <tr><th>Produto</th><th>Valor</th></tr>
+    {% for p in produtos %}
+    <tr>
+      <td>{{ p.Nome }}</td>
+      <td>R${{ p.Valor }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+  <a href="/finalizar" class="btn btn-success">Finalizar Compra</a>
+  {% else %}
+  <p>Nenhum produto no carrinho.</p>
+  {% endif %}
+</div>
+{% endblock %}

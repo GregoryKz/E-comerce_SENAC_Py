@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container mt-4">
+  <h2>Produtos disponíveis</h2>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>ID</th><th>Nome</th><th>Valor</th><th>Marca</th><th>Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for p in produtos %}
+      <tr>
+        <td>{{ p.ID }}</td>
+        <td>{{ p.Nome }}</td>
+        <td>R${{ p.Valor }}</td>
+        <td>{{ p.Marca }}</td>
+        <td><a href="/adicionar_carrinho/{{ p.ID }}" class="btn btn-success btn-sm">Comprar</a></td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  <a href="/carrinho" class="btn btn-primary">Ver Carrinho</a>
+</div>
+{% endblock %}

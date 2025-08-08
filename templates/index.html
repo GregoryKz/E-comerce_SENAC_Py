@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container text-center mt-5">
+  <h1 class="mb-4">Bem-vindo à Loja Online</h1>
+
+  {% with messages = get_flashed_messages(with_categories=True) %}
+    {% for category, message in messages %}
+      <div class="alert alert-{{ 'success' if category == 'success' else 'danger' }} alert-dismissible fade show" role="alert">
+        {{ message }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+    {% endfor %}
+  {% endwith %}
+
+  <div class="d-grid gap-3 col-6 mx-auto mt-4">
+    <a href="/cadastrar_cliente" class="btn btn-outline-primary btn-lg">Cadastrar Cliente</a>
+    <a href="/cadastrar_produto" class="btn btn-outline-success btn-lg">Cadastrar Produto</a>
+    <a href="/produtos" class="btn btn-outline-dark btn-lg">Ver Produtos</a>
+  </div>
+</div>
+{% endblock %}
